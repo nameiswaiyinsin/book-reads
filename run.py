@@ -1,3 +1,4 @@
+import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -48,20 +49,20 @@ def add_book():
     Add a new book to the google spreadsheet with the accompanying information
     Book Title, Author, Start Date, End Date, Rating, Review
     """
-    book_title = input("Please enter the book title: \n")
+    book_title = input("Please enter the book title: ")
 
-    author = input("Please enter the author: \n")
+    author = input("Please enter the author: ")
 
-    print("Date is recorded in 'DD-MM-YYYY' format.")
-    start_date = input("Enter the start date: \n")
+    print("\nDate is recorded in 'DD-MM-YYYY' format.")
+    start_date = input("Enter the start date: ")
 
-    print("Date is recorded in 'DD-MM-YYYY' format.")
-    end_date = input("Enter the end date: \n")
+    print("\nDate is recorded in 'DD-MM-YYYY' format.")
+    end_date = input("Enter the end date: ")
 
-    print("1 on the rating system is Bad and 5 on rating system is Excellent.")
-    rating = input("Enter rating for the book out of 5: \n")
-    
-    review = input("Enter review notes: \n")
+    print("\n1 on the rating system is Bad and 5 on rating system is Excellent.")
+    rating = input("Enter rating for the book out of 5: ")
+
+    review = input("\nEnter review notes: ")
 
     
 
