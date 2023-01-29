@@ -49,20 +49,37 @@ def add_book():
     Add a new book to the google spreadsheet with the accompanying information
     Book Title, Author, Start Date, End Date, Rating, Review
     """
-    book_title = input("Please enter the book title: ")
-
-    author = input("Please enter the author: ")
-
-    print("\nDate is recorded in 'DD-MM-YYYY' format.")
-    start_date = input("Enter the start date: ")
-
-    print("\nDate is recorded in 'DD-MM-YYYY' format.")
-    end_date = input("Enter the end date: ")
-
-    print("\n1 on the rating system is Bad and 5 on rating system is Excellent.")
-    rating = input("Enter rating for the book out of 5: ")
-
-    review = input("\nEnter review notes: ")
+    
+    book_details = []
+    while True:
+        book_title = input("Please enter the book title: ")
+        if validate_data(book_title):
+            book_details.append(book_title)
+            break
+    while True:
+        author = input("Please enter the author: ")
+        if validate_data(author):
+            book_details.append(author)
+            break
+    while True:
+        print("\nDate is recorded in 'DD-MM-YYYY' format.")
+        start_date = input("Enter the start date: ")
+        end_date = input("Enter the end date: ")
+        if validate_date(start_date, end_date):
+            book_details.append(start_date)
+            book_details.append(end_date)
+            break
+    while True:
+        print("\n1 on the rating system is Bad and 5 on rating system is Excellent.")
+        rating = input("Enter rating for the book out of 5: ")
+        if validate_rating(rating):
+            book_details.append(rating)
+            break
+    while True:
+        review = input("\nEnter review notes: ")
+        if validate_data(review):
+            book_details.append(review)
+            break
 
     
 
