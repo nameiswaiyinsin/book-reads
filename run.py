@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -18,7 +19,7 @@ def menu():
     """
     Display a menu with a list of options to choose from
     """
-print("Welcome to your Book Reads Record diary. \n")
+print("Welcome to your Book Reads Record diary! \n")
 
 while True:
     print("""
@@ -40,3 +41,14 @@ while True:
         exit_programme()
     else:
         print("Invalid option, please select number from 1-4: ")
+
+
+def add_book():
+    """
+    Add a new book to the google spreadsheet with the accompanying information
+    Book Title, Author, Start Date, End Date, Rating, Review
+    """
+    
+
+
+menu()
