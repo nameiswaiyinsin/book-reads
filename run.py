@@ -62,7 +62,7 @@ def add_book():
             book_details.append(author)
             break
     while True:
-        print("\nDate is recorded in 'DD-MM-YYYY' format.")
+        print("\nDate is recorded in 'DD/MM/YYYY' format.")
         start_date = input("Enter the start date: ")
         end_date = input("Enter the end date: ")
         if validate_date(start_date, end_date):
@@ -100,19 +100,19 @@ def validate_date(start_date, end_date):
     Validate the start and end date to check if it is in the right format of dd/mm/yyyy 
     """
     try:
-        if datetime.datetime.strptime(start_date, '%d-%m-%Y') is False:
+        if datetime.datetime.strptime(start_date, '%d/%m/%Y') is False:
             raise ValueError()
-        elif datetime.datetime.strptime(end_date, '%d-%m-%Y') is False:
+        elif datetime.datetime.strptime(end_date, '%d/%m/%Y') is False:
             raise ValueError()
         try:
-            if datetime.datetime.strptime(start_date, '%d-%m-%Y') > datetime.datetime.strptime(end_date, '%d-%m-%Y'):
+            if datetime.datetime.strptime(start_date, '%d/%m/%Y') > datetime.datetime.strptime(end_date, '%d/%m/%Y'):
                 raise ValueError()
         except ValueError:
             print("Error: Start date is later than your end date. \n"
                   "Input start and end date again. \n")
             return False
     except ValueError:
-        print("Incorrect date format, should be 'DD-MM-YYYY'. \n")
+        print("Incorrect date format, should be 'DD/MM/YYYY'. \n")
         return False
     return True
 
