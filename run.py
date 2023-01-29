@@ -14,5 +14,15 @@ SHEET = GSPREAD_CLIENT.open('book_reads')
 
 records = SHEET.worksheet('records')
 
-data = records.get_all_values()
-print(data)
+def menu():
+    """
+    Display a menu with a list of options to choose from
+    """
+print("Welcome to your Book Reads Record diary. \n")
+print("""
+    -----Menu-----
+    1. Add Book
+    2. Display All Books 
+    3. Delete Book
+    4. Exit
+    """)
