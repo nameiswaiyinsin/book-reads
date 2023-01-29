@@ -82,6 +82,23 @@ def add_book():
             break
 
     
+def validate_data(values):
+    """
+    Validate to check if the string inputs have data.
+    """
+
+
+def validate_date(start_date, end_date):
+    """
+    Validate the start and end date to check if it is in the right format of dd/mm/yyyy
+    """
+
+
+def validate_rating(rating):
+    """
+    Validate the rating to check if it a number, from 0-5"
+    """
+
 
 
 
