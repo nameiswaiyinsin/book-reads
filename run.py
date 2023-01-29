@@ -61,40 +61,48 @@ def add_book():
         if validate_data(author):
             book_details.append(author)
             break
-    while True:
-        print("\nDate is recorded in 'DD-MM-YYYY' format.")
-        start_date = input("Enter the start date: ")
-        end_date = input("Enter the end date: ")
-        if validate_date(start_date, end_date):
-            book_details.append(start_date)
-            book_details.append(end_date)
-            break
-    while True:
-        print("\n1 on the rating system is Bad and 5 on rating system is Excellent.")
-        rating = input("Enter rating for the book out of 5: ")
-        if validate_rating(rating):
-            book_details.append(rating)
-            break
-    while True:
-        review = input("\nEnter review notes: ")
-        if validate_data(review):
-            book_details.append(review)
-            break
+    #while True:
+     #   print("\nDate is recorded in 'DD-MM-YYYY' format.")
+     #   start_date = input("Enter the start date: ")
+     #   end_date = input("Enter the end date: ")
+     #   if validate_date(start_date, end_date):
+     #       book_details.append(start_date)
+     #       book_details.append(end_date)
+     #       break
+    #while True:
+    #    print("\n1 on the rating system is Bad and 5 on rating system is Excellent.")
+    #    rating = input("Enter rating for the book out of 5: ")
+    #    if validate_rating(rating):
+    #        book_details.append(rating)
+    #        break
+    #while True:
+    #    review = input("\nEnter review notes: ")
+    #    if validate_data(review):
+    #        book_details.append(review)
+    #        break
 
     
 def validate_data(values):
     """
     Validate to check if the string inputs have data.
     """
+    try:
+        if len(values) == 0:
+            raise ValueError()
+    except ValueError:
+        print("Empty string, please input data. \n")
+        return False
+    return True
 
 
-def validate_date(start_date, end_date):
+
+#def validate_date(start_date, end_date):
     """
     Validate the start and end date to check if it is in the right format of dd/mm/yyyy
     """
 
 
-def validate_rating(rating):
+#def validate_rating(rating):
     """
     Validate the rating to check if it a number, from 0-5"
     """
