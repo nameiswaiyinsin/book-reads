@@ -39,7 +39,7 @@ As the owner of this programme, my goals are to:
 -----
 ## Structure
 ### Flowchart 
-![](/assets/images/flowchart.png)
+![](/assets/images/flowchart.jpeg)
 
 ### Current Features
 #### 1. Main Menu
