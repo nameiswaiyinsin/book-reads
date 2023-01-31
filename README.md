@@ -1,6 +1,9 @@
 # Book Reads 
-*pic of responsive design \
-*small paragraph introducing
+## Deployed Live link 
+* [BookReads](https://book-reads.herokuapp.com/) - https://book-reads.herokuapp.com/
+
+* pic of responsive design 
+* small paragraph introducing
 
 ----
 ## UX Design
@@ -43,6 +46,8 @@
 ## Bugs
 
 ## Deployment
+The live deployment can be found using the following URL - https://book-reads.herokuapp.com/
+
 ### Heroku
 
 ## Technologies used
