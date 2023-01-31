@@ -1,31 +1,96 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Book Reads 
+*pic of responsive design \
+*small paragraph introducing
 
-Welcome nameiswaiyinsin,
+----
+## UX Design
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
-## Reminders
+### User Goals 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+### Site Owner Goals
 
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
+-------
+## User Experience
+### Target Audience
+### User Requirements & Expectations
 -----
-Happy coding!
+## Structure
+### Flowchart
+### Current Features
+
+#### Main Menu
+
+#### Add Books
+
+#### Display all Books
+
+#### Delete Book
+
+#### Exit
+
+### Future Features I would like to add
+1. Add a feature to calculate how long it took for the reader to complete a book.
+2. Add an upload photo feature.
+3. Add a Wishlist option on the menu and feature to add books you would like to add to your wishlist.
+4. Calculate how many books you have read in the year.
+5. Add books read in one year into a yearly worksheet. 
+
+## Testing & Validation
+
+### PEP8
+
+## Bugs
+
+## Deployment
+### Heroku
+
+## Technologies used
+### Language
+* Python
+
+### Framework & Tools
+* Lucidchart
+* Gitpod
+* Github
+* Google Cloud Platform
+* Heroku
+
+### Libraries
+#### Python Library
+* [Datetime](https://docs.python.org/3/library/datetime.html)
+
+#### Third Party Libraries
+* [Gspread](https://docs.gspread.org/en/v5.3.2/) 
+* [Google Auth](https://google-auth.readthedocs.io/en/master/)
+
+
+## Credits
+
+## Acknowledgement 
+### Special thanks to the following:
+* Code Institute for providing this learning platform.
+* Code Institute Student Support Team & Tutor Assistance for all your help. 
+* Adegbenga Adeye, Code Institute Mentor for the valuable guidance and advice.
+* CI Slack Community for assistance in any help or queries asked.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
