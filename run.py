@@ -15,6 +15,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('book_reads')
 RECORDS = SHEET.worksheet('records')
 
+
 def menu():
     """
     Display a menu with a list of options to choose from
@@ -25,7 +26,7 @@ def menu():
         print("""
             -----Menu-----
             1. Add Book
-            2. Display All Books 
+            2. Display All Books
             3. Delete Book
             4. Exit
             """)
@@ -48,7 +49,6 @@ def add_book():
     Add a new book to the google spreadsheet with the accompanying information
     Book Title, Author, Start Date, End Date, Rating, Review
     """
-    
     book_details = []
     while True:
         book_title = input("Please enter the book title: \n")
@@ -81,7 +81,7 @@ def add_book():
             break
     return update_records_worksheet(book_details)
 
-    
+
 def validate_data(values):
     """
     Validate to check if the string inputs have data.
@@ -97,7 +97,8 @@ def validate_data(values):
 
 def validate_date(start_date, end_date):
     """
-    Validate the start and end date to check if it is in the right format of dd/mm/yyyy 
+    Validate the start and end date to check if
+    it is in the right format of dd/mm/yyyy
     """
     try:
         if datetime.datetime.strptime(start_date, '%d/%m/%Y') is False:
@@ -105,7 +106,8 @@ def validate_date(start_date, end_date):
         elif datetime.datetime.strptime(end_date, '%d/%m/%Y') is False:
             raise ValueError()
         try:
-            if datetime.datetime.strptime(start_date, '%d/%m/%Y') > datetime.datetime.strptime(end_date, '%d/%m/%Y'):
+            if datetime.datetime.strptime(start_date, '%d/%m/%Y') >
+            datetime.datetime.strptime(end_date, '%d/%m/%Y'):
                 raise ValueError()
         except ValueError:
             print("Error: Start date is later than your end date. \n"
@@ -125,18 +127,18 @@ def validate_rating(rating):
         if rating == int(rating):
             raise ValueError()
     except ValueError:
-            print("\nIncorrect string input. \n"
-            "Please input a number rating between 0-5. \n")
-            return False
+        print("\nIncorrect string input. \n"
+              "Please input a number rating between 0-5. \n")
+        return False
     try:
         if int(rating) > 5:
             raise ValueError()
         elif int(rating) < 0:
             raise ValueError()
     except ValueError:
-            print("\nIncorrect number range input. \n"
-            "Please input a rating between 0-5. \n")
-            return False
+        print("\nIncorrect number range input. \n"
+              "Please input a rating between 0-5. \n")
+        return False
     return True
 
 
@@ -152,7 +154,8 @@ def update_records_worksheet(record):
 
 def display_all_books():
     """
-    This function retrieves all the books recorded from the Google sheet and displays them in the terminal.
+    This function retrieves all the books recorded from the
+    Google sheet and displays them in the terminal.
     """
     all_records = RECORDS.get_all_records()
     if all_records:
@@ -160,6 +163,7 @@ def display_all_books():
             print_all_books(records)
     else:
         print("\nNo books recorded in book diary yet!")
+
 
 def print_all_books(existing):
     """
@@ -187,14 +191,14 @@ def delete_book():
             rownum = book.index(name) + 1
             row = RECORDS.row_values(rownum)
             headings = RECORDS.row_values(1)
-            search = dict(zip(headings,row))
+            search = dict(zip(headings, row))
             for key, value in search.items():
                 print(f"{key}: {value}")
             print("\nDeleting book from Book Diary...\n")
             RECORDS.delete_rows(rownum)
             print("Book has been deleted! \n")
             break
-        else: 
+        else:
             print("Error: No book with that title. \n"
                   "Please enter valid title.\n")
 
@@ -205,7 +209,8 @@ def exit_programme():
     """
     print("\nExiting programme...\n")
     print("---------------Thank you for using BookReads Diary---------------")
-    print("---------------------------Goodbye!------------------------------\n")
+    print("---------------------------Goodbye!----------------------------\n")
     exit()
+
 
 menu()
