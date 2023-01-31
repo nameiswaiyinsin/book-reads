@@ -198,4 +198,14 @@ def delete_book():
             print("Error: No book with that title. \n"
                   "Please enter valid title.\n")
 
+
+def exit_programme():
+    """
+    Exit from the programme.
+    """
+    print("\nExiting programme...\n")
+    print("---------------Thank you for using BookReads Diary---------------")
+    print("---------------------------Goodbye!------------------------------\n")
+    exit()
+
 menu()
