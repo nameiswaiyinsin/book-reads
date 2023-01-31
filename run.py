@@ -13,8 +13,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('book_reads')
-
-records = SHEET.worksheet('records')
+RECORDS = SHEET.worksheet('records')
 
 def menu():
     """
@@ -80,6 +79,7 @@ def add_book():
         if validate_data(review):
             book_details.append(review)
             break
+    return update_records_worksheet(book_details)
 
     
 def validate_data(values):
@@ -117,7 +117,6 @@ def validate_date(start_date, end_date):
     return True
 
 
-
 def validate_rating(rating):
     """
     Validate the rating to check if it a number, from 0-5"
@@ -140,6 +139,15 @@ def validate_rating(rating):
             return False
     return True
 
+
+def update_records_worksheet(record):
+    """
+    Update records worksheet, adding a new row when new book is added.
+    """
+    print("Updating Book Diary...\n")
+    records_worksheet = SHEET.worksheet("records")
+    records_worksheet.append_row(record)
+    print("Book diary updated successfully!\n")
 
 
 
