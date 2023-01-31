@@ -150,5 +150,28 @@ def update_records_worksheet(record):
     print("Book diary updated successfully!\n")
 
 
+def display_all_books():
+    """
+    This function retrieves all the books recorded from the Google sheet and displays them in the terminal.
+    """
+    all_records = RECORDS.get_all_records()
+    if all_records:
+        for records in all_records:
+            print_all_books(records)
+    else:
+        print("No books recorded in book diary yet!")
+
+def print_all_books(existing):
+    """
+    Display all the books.
+    """
+    book = []
+    print("-----")
+    for key, value in existing.items():
+        print(f"{key}: {value}")
+    print("-----")
+    return book
+
+
 
 menu()
