@@ -30,7 +30,7 @@ def menu():
             4. Exit
             """)
 
-        option = input("Please select options from 1-4: ")
+        option = input("Please select options from 1-4: \n")
         if option == '1':
             add_book()
         elif option == '2':
@@ -40,7 +40,7 @@ def menu():
         elif option == '4':
             exit_programme()
         else:
-            print("Invalid option, please select number from 1-4: ")
+            print("Invalid option, please select number from 1-4: \n")
 
 
 def add_book():
@@ -51,31 +51,31 @@ def add_book():
     
     book_details = []
     while True:
-        book_title = input("Please enter the book title: ")
+        book_title = input("Please enter the book title: \n")
         if validate_data(book_title):
             book_details.append(book_title)
             break
     while True:
-        author = input("Please enter the author: ")
+        author = input("Please enter the author: \n")
         if validate_data(author):
             book_details.append(author)
             break
     while True:
         print("\nDate is recorded in 'DD/MM/YYYY' format.")
-        start_date = input("Enter the start date: ")
-        end_date = input("Enter the end date: ")
+        start_date = input("Enter the start date: \n")
+        end_date = input("Enter the end date: \n")
         if validate_date(start_date, end_date):
             book_details.append(start_date)
             book_details.append(end_date)
             break
     while True:
         print("\n0 on the rating system is Bad and 5 is Excellent.")
-        rating = input("Enter rating for the book out of 5: ")
+        rating = input("Enter rating for the book out of 5: \n")
         if validate_rating(rating):
             book_details.append(rating)
             break
     while True:
-        review = input("\nEnter review notes: ")
+        review = input("\nEnter review notes: \n")
         if validate_data(review):
             book_details.append(review)
             break
