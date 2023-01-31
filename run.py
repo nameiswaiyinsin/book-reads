@@ -144,7 +144,7 @@ def update_records_worksheet(record):
     """
     Update records worksheet, adding a new row when new book is added.
     """
-    print("Updating Book Diary...\n")
+    print("\nUpdating Book Diary...\n")
     records_worksheet = SHEET.worksheet("records")
     records_worksheet.append_row(record)
     print("Book diary updated successfully!\n")
@@ -159,7 +159,7 @@ def display_all_books():
         for records in all_records:
             print_all_books(records)
     else:
-        print("No books recorded in book diary yet!")
+        print("\nNo books recorded in book diary yet!")
 
 def print_all_books(existing):
     """
@@ -173,5 +173,29 @@ def print_all_books(existing):
     return book
 
 
+def delete_book():
+    """
+    Delete a book from Google spreadsheet.
+    """
+    while True:
+        name = input("Please enter book name. \n"
+                     "Or type 'exit' too return to main menu.: ")
+        book = RECORDS.col_values(1)
+        if name == "exit":
+            menu()
+        if name in book:
+            rownum = book.index(name) + 1
+            row = RECORDS.row_values(rownum)
+            headings = RECORDS.row_values(1)
+            search = dict(zip(headings,row))
+            for key, value in search.items():
+                print(f"{key}: {value}")
+            print("\nDeleting book from Book Diary...\n")
+            RECORDS.delete_rows(rownum)
+            print("Book has been deleted! \n")
+            break
+        else: 
+            print("Error: No book with that title. \n"
+                  "Please enter valid title.\n")
 
 menu()
