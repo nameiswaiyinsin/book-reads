@@ -75,11 +75,11 @@ def add_book():
         if validate_rating(rating):
             book_details.append(rating)
             break
-    #while True:
-    #    review = input("\nEnter review notes: ")
-    #    if validate_data(review):
-    #        book_details.append(review)
-    #        break
+    while True:
+        review = input("\nEnter review notes: ")
+        if validate_data(review):
+            book_details.append(review)
+            break
 
     
 def validate_data(values):
@@ -126,9 +126,8 @@ def validate_rating(rating):
         if rating == int(rating):
             raise ValueError()
     except ValueError:
-            print("Incorrect string input. \n"
-            "Please input a number rating between 0-5. \n"
-            "O is bad and 5 is excellent on the rating scale. \n")
+            print("\nIncorrect string input. \n"
+            "Please input a number rating between 0-5. \n")
             return False
     try:
         if int(rating) > 5:
@@ -136,9 +135,8 @@ def validate_rating(rating):
         elif int(rating) < 0:
             raise ValueError()
     except ValueError:
-            print("Incorrect number range input. \n"
-            "Please input a rating between 0-5. \n"
-            "O is bad and 5 is excellent on the rating scale. \n")
+            print("\nIncorrect number range input. \n"
+            "Please input a rating between 0-5. \n")
             return False
     return True
 
