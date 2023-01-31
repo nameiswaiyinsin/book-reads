@@ -69,12 +69,12 @@ def add_book():
             book_details.append(start_date)
             book_details.append(end_date)
             break
-    #while True:
-    #    print("\n1 on the rating system is Bad and 5 on rating system is Excellent.")
-    #    rating = input("Enter rating for the book out of 5: ")
-    #    if validate_rating(rating):
-    #        book_details.append(rating)
-    #        break
+    while True:
+        print("\n0 on the rating system is Bad and 5 is Excellent.")
+        rating = input("Enter rating for the book out of 5: ")
+        if validate_rating(rating):
+            book_details.append(rating)
+            break
     #while True:
     #    review = input("\nEnter review notes: ")
     #    if validate_data(review):
@@ -118,10 +118,29 @@ def validate_date(start_date, end_date):
 
 
 
-#def validate_rating(rating):
+def validate_rating(rating):
     """
     Validate the rating to check if it a number, from 0-5"
     """
+    try:
+        if rating == int(rating):
+            raise ValueError()
+    except ValueError:
+            print("Incorrect string input. \n"
+            "Please input a number rating between 0-5. \n"
+            "O is bad and 5 is excellent on the rating scale. \n")
+            return False
+    try:
+        if int(rating) > 5:
+            raise ValueError()
+        elif int(rating) < 0:
+            raise ValueError()
+    except ValueError:
+            print("Incorrect number range input. \n"
+            "Please input a rating between 0-5. \n"
+            "O is bad and 5 is excellent on the rating scale. \n")
+            return False
+    return True
 
 
 
