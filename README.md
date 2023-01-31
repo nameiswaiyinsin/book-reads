@@ -1,9 +1,11 @@
 # Book Reads 
-!()
-## Deployed Live link 
-* [BookReads](https://book-reads.herokuapp.com/) - https://book-reads.herokuapp.com/
+Welcome to [BookReads](https://book-reads.herokuapp.com/) README.md file!
 
-* pic of responsive design 
+![](/assets/images/responsive%20design.png)
+
+## Deployed Live link 
+* [BookReads](https://book-reads.herokuapp.com/) URL - https://book-reads.herokuapp.com/
+
 * small paragraph introducing
 
 ----
@@ -24,8 +26,10 @@
 
 ### Current Features
 #### Main Menu
+![](/assets/images/mainmenu.png)
 
 #### Add Books
+![](/assets/images/)
 
 #### Display all Books
 
